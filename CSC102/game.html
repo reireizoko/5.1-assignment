@@ -14,13 +14,13 @@
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
-        <script>
-          function openCloseWindow(){
-            window.open('table.html');
-            window.close();
-          }
-        </script>
+<button id="returnback" onclick="goBack()">Click here to go back!</button>
+
+<script>
+  function goBack(){
+    window.location.href = 'table.html';
+  }
+</script>
         <h1>To play Dice Quest, click the button below!</h1>
         <!-- informs users what the webpage is about -->
         <button id="btn" onclick="rollDice()">Roll Dice</button>
