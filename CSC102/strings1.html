@@ -1,0 +1,101 @@
+<!-- Zev Johnson, 9/29/2024 -->
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Strings Continued</title>
+        <style>
+            p{
+                color:burlywood;
+                font-family:'Segoe UI', Verdana, sans-serif;
+                font-weight: bolder;
+            }
+
+            p.mix{border-style: dotted dashed solid double;}
+
+            button{
+                background-color:midnightblue;
+                border-style:double;
+                color:whitesmoke;
+            }
+        </style>
+        <link rel="stylesheet" href="main.css">
+        <script src="stringjavascript1.js"></script>
+    </head>
+    <body>
+        <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
+        <script>
+          function openCloseWindow(){
+            window.open('table.html');
+            window.close();
+          }
+        </script>
+        <p id="name"></p>
+        <h1>welcome to the string zone! enter the infomation below!</h1>
+        <input id="firstname" type="text" placeholder="type your first name" />
+        <input id="lastname" type="text" placeholder="type your last name" />
+        <input id="zipcode" type="text" placeholder="type your zipcode" /><br ><br ><br >
+        <button onclick="evaulate_length()">click to submit!</button>
+        <!-- input that the user provides -->
+        <script>
+            // the process
+            function evaulate_length(){
+
+                let firstname = document.getElementById("firstname").value;
+                let lastname = document.getElementById("lastname").value;
+                let full_name = firstname + " " + lastname;
+                let s_string = full_name.substring(0, 7);
+                let name_length = full_name.length -1;
+                alert("the substring is.. " + s_string.toLowerCase());
+
+                if (name_length > 20){
+                    alert("your name is more than 20 characters!");
+                }
+                else{
+                    alert("your name is less than 20 characters!");
+                }
+
+                let zip = document.getElementById("zipcode").value;
+                let zip_length = zip.length;
+                if(zip_length < 5){
+                    alert("the zipcode you entered is invalid.. this is what i recieved: " + zip + " might've been a typo?" + " make sure the zipcode is at least 5 characters!");
+                }
+                else {
+                    alert("that zipcode is valid. thank you!");
+                }
+
+                alert("you entered " + firstname + " " + lastname + ", cool name!");
+
+                document.getElementById("name").innerHTML = " my name is: " + full_name.trim();
+                alert(" your name has a length of.. " + full_name.length);
+                if(zip_length > 5){
+                }
+            }
+        </script>
+        <center>
+            <marquee behavior="alternate" direction="left">
+        <img id='img' src=SatoruGlasses.gif>
+            </marquee>
+    </center>
+   <!-- hidden background audio -->
+   <audio id="bg-audio" loop>
+    <source src="Gil Nagel - Daydreaming.mp3" type="audio/mpeg">
+    <!-- message for unsupported browsers -->
+</audio>
+<script>
+    // function to play the audio after user interaction
+    function playAudio() {
+        var audio = document.getElementById("bg-audio");
+        audio.play();
+        document.removeEventListener('click', playAudio);
+        document.removeEventListener('scroll', playAudio);
+    }
+
+    // attach event listeners for user interaction
+    document.addEventListener('click', playAudio);
+    document.addEventListener('scroll', playAudio);
+</script>
+<!-- make sure you click anywhere on the screen, so the audio plays! -->
+    </body>
+ </html>

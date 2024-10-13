@@ -1,0 +1,36 @@
+<!-- Zev Johnson, 9/24/2024 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Strings</title>
+    <link rel="stylesheet" href="main.css">
+  <style type="text/css">
+    button{
+      background-color:midnightblue;
+      color:whitesmoke;
+      border:groove;
+    }
+  </style>
+</head>
+<body>
+  <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
+  <script>
+    function openCloseWindow(){
+      window.open('table.html');
+      window.close();
+    }
+  </script>
+<h1>this is a palindrome checker. enter any word!</h1>
+<div id="outputDiv"></div>
+<div id="apDiv3">
+  <input type="submit" name="button" id="button" value="Click to Submit!" onclick="test()" />
+</div>
+<div id="apDiv2">
+  <input type="text" name="palin" id="palin" />
+</div>
+<script src="stringjavascript.js"></script>
+<!-- links the javascript to this html -->
+</body>
+</html>

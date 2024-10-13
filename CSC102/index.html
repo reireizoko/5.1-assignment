@@ -1,0 +1,83 @@
+<!-- Zev Johnson, 9/12/2024 -->
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>silly webpage</title>
+    <style>
+        #image {
+          position: absolute;
+          top: 50px;
+          left: 50px;
+          width: 150px;
+          height: 150px;
+        }
+        #controls {
+          margin-top: 20px;
+        }
+        button{
+                background-color:midnightblue;
+                border-style:double;
+                color:whitesmoke;
+            }
+      </style>
+    <!-- don't forget to add the link to the css file!! -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
+  <script>
+    function openCloseWindow(){
+      window.open('table.html');
+      window.close();
+    }
+  </script>
+    <h1>greetings! welcome to the silly zone!</h1>
+    <!-- wow, very creative name! -->
+    <img id="image" src="burger.jpg" alt="Moving Image">
+  
+    <div id="controls">
+      <button id="startBtn">Start</button><br ><br ><br >
+      <button id="stopBtn">Stop</button><br ><br ><br >
+    </div>
+  
+    <script>
+      let image = document.getElementById('image');
+      let startBtn = document.getElementById('startBtn');
+      let stopBtn = document.getElementById('stopBtn');
+      let moving = false;
+      let posX = 50;
+      let posY = 50;
+      let moveInterval;
+  
+      // Move the image function
+      function moveImage() {
+        if (posX >= window.innerWidth - 100 || posX <= 0) {
+          posX = 0; // Reset X position
+        }
+        if (posY >= window.innerHeight - 100 || posY <= 0) {
+          posY = 0; // Reset Y position
+        }
+        posX += 5;
+        posY += 5;
+        image.style.left = posX + 'px';
+        image.style.top = posY + 'px';
+      }
+  
+      // Start moving the image
+      startBtn.addEventListener('click', function() {
+        if (!moving) {
+          moving = true;
+          moveInterval = setInterval(moveImage, 100); // Moves every 100ms
+        }
+      });
+  
+      // Stop moving the image
+      stopBtn.addEventListener('click', function() {
+        moving = false;
+        clearInterval(moveInterval);
+      });
+    </script>
+</body>
+</html>

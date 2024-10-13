@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+ button{
+    background-color:midnightblue;
+    border-style:double;
+    color:whitesmoke;
+       }
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dice Quest</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
+        <script>
+          function openCloseWindow(){
+            window.open('table.html');
+            window.close();
+          }
+        </script>
+        <h1>To play Dice Quest, click the button below!</h1>
+        <!-- informs users what the webpage is about -->
+        <button id="btn" onclick="rollDice()">Roll Dice</button>
+        <!-- displays a button for the user -->
+        <p id="Die1"></p>
+        <p id="Die2"></p>
+        <p id="Results"></p>
+        <script>
+            function rollDice(){
+                let minDieNumber = 1;
+                let maxDieNumber = 6;
+
+                let x = Math.floor(Math.random() * (maxDieNumber - minDieNumber + 1)) + minDieNumber;
+                let y = Math.floor(Math.random() * (maxDieNumber - minDieNumber + 1)) + minDieNumber;
+                // adding +1 to the end of the command always makes sure the outcome is at least 1
+
+                document.getElementById("Die1").innerHTML = "You rolled a [" + x + "] on the face of die #1!";
+                document.getElementById("Die2").innerHTML = "You rolled a [" + y + "] on the face of die #2!";
+                // the system adding the numbers and displaying to the user
+
+                let rollTotal = x + y;
+
+                if (rollTotal == 7){
+                    document.getElementById("Results").innerHTML = "Wow, you rolled a 7! Outstanding job! You Win!!!"
+                    // if user rolled a 7 it'll display a win
+                }
+                else if (rollTotal == 11){
+                    document.getElementById("Results").innerHTML = "You rolled an 11.. sorry but you lost this one!"
+                    // if user rolled an 11 it'll display a lost
+                }
+                else{
+                    document.getElementById("Results").innerHTML = "Wow, you didn't win or lose. Welp, try again!"
+                    // if user doesn't roll a 7 or 11, it'll display a push
+                }
+            }
+        </script>
+        <p>
+            <img id="memeImage" src="dice.png">
+            <!-- just to show some visuals -->
+        </p>
+    </body>
+</html>
