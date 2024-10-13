@@ -24,13 +24,13 @@
         <script src="stringjavascript1.js"></script>
     </head>
     <body>
-        <button id="returnback" onclick="openCloseWindow()">click here to go back!</button>
-        <script>
-          function openCloseWindow(){
-            window.open('table.html');
-            window.close();
-          }
-        </script>
+<button id="returnback" onclick="goBack()">Click here to go back!</button>
+
+<script>
+  function goBack(){
+    window.location.href = 'table.html';
+  }
+</script>
         <p id="name"></p>
         <h1>welcome to the string zone! enter the infomation below!</h1>
         <input id="firstname" type="text" placeholder="type your first name" />
